@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Bar Graph</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .input-container, .controls {
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            margin-right: 10px;
+            padding: 5px;
+        }
+        .graph-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .graph {
+            flex: 1;
+        }
+        .bar {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 10px;
+        }
+        .bar div {
+            text-align: center;
+            padding: 5px;
+            margin-right: 5px;
+            background-color: #4caf50;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .label {
+            margin-top: 5px;
+            text-align: center;
+        }
+        button {
+            padding: 5px 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Product Bar Graph</h1>
+    <div class="input-container">
+        <input type="text" id="productName" placeholder="Product Name">
+        <input type="number" id="productPrice" placeholder="Price">
+        <input type="number" id="productRating" placeholder="Rating">
+        <button onclick="addProduct()">Add Product</button>
+    </div>
+    <div class="controls">
+        <button onclick="sortGraph('price')">Sort by Price</button>
+        <button onclick="sortGraph('rating')">Sort by Rating</button>
+    </div>
+    <div class="graph-container">
+        <div class="graph" id="priceGraph">
+            <h2>Price Graph</h2>
+        </div>
+        <div class="graph" id="ratingGraph">
+            <h2>Rating Graph</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
